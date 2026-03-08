@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <style>
+    .timer {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ef4444;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+  <body>
+    <header>
+      <img src="/static/logo.jpg" class="logo" />
+      <h1 class="title">Techno Tapas</h1>
+    </header>
+
+    <div class="container">
+      <div class="timer">Time Remaining: <span id="timer" data-remaining="{{ remaining }}"></span></div>
+      <h3>Unscramble the Given Topic for Collage</h3>
+      <div class="scramble">{{ scramble }}</div>
+
+      <form method="POST" onsubmit="combineLetters()">
+        <div class="letter-container">
+          {% set clean = scramble.replace(" ", "") %} {% for i in
+          range(clean|length) %}
+          <input maxlength="1" class="letter-box" />
+          {% endfor %}
+        </div>
+
+        <input type="hidden" name="answer" id="final_answer" />
+        <button type="submit">Submit</button>
+      </form>
+
+      {% if error %}
+      <p class="error">{{ error }}</p>
+      {% endif %}
+    </div>
+
+    <script>
+
+let timerElement = document.getElementById("timer");
+
+// get remaining seconds from HTML attribute
+let totalSeconds = parseInt(timerElement.dataset.remaining || "300");
+
+function updateTimer(){
+
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    timerElement.innerHTML = minutes + ":" + seconds;
+
+    if(totalSeconds <= 0){
+        window.location.href="/scramble";
+        return;
+    }
+
+    totalSeconds--;
+}
+
+updateTimer();
+setInterval(updateTimer,1000);
+
+
+      function combineLetters() {
+        let boxes = document.getElementsByClassName("letter-box");
+        let word = "";
+
+        for (let box of boxes) {
+          word += box.value;
+        }
+
+        document.getElementById("final_answer").value = word;
+      }
+
+      //  Letter Box Script
+      document.querySelectorAll(".letter-box").forEach((input, index, arr) => {
+        input.addEventListener("input", () => {
+          if (input.value.length === 1 && arr[index + 1]) {
+            arr[index + 1].focus();
+          }
+        });
+
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Backspace" && !input.value && arr[index - 1]) {
+            arr[index - 1].focus();
+          }
+        });
+      });
+      // Disable page refresh
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "F5") {
+          e.preventDefault();
+        }
+
+        if (e.ctrlKey && e.key === "r") {
+          e.preventDefault();
+        }
+      });
+
+      // Disable browser back button
+      history.pushState(null, null, location.href);
+
+      window.onpopstate = function () {
+        history.go(1);
+      };
+    </script>
+  </body>
+</html>

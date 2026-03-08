@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Techno Tapas</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<header>
+    <img src="/static/logo.jpg" class="logo">
+    <h1 class="title">Welcome to Trividha 2k26</h1>
+    <h1 class="title">Techno Tapas</h1>
+    <p class="par">Challenge Your Logic, Showcase Your Creativity</p>
+</header>
+
+<div class="page-center">
+
+    <div class="card">
+
+        <h2>Login to Start Challenge</h2>
+
+        <form method="POST">
+
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Enter Your Name" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" name="college" placeholder="Enter College Name" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" name="chit" placeholder="Enter Chit Number" required>
+            </div>
+
+            <button type="submit">Start Challenge</button>
+
+        </form>
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

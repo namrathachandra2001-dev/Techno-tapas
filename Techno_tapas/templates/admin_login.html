@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Admin Login - Techno Tapas</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #2563eb, #1e40af);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .login-card {
+        background: white;
+        padding: 40px;
+        width: 350px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        text-align: center;
+      }
+
+      .login-card h2 {
+        margin-bottom: 25px;
+        color: #1f2937;
+      }
+
+      .input-group {
+        margin-bottom: 18px;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        font-size: 14px;
+        outline: none;
+        transition: 0.2s;
+      }
+
+      .input-group input:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      button:hover {
+        background: #1e40af;
+      }
+
+      .error {
+        margin-top: 15px;
+        color: #dc2626;
+        font-size: 14px;
+      }
+
+      .footer {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="login-card">
+        <img src="/static/logo.jpg" style="width:80px;margin-bottom:10px;">
+      <h2>Admin Login</h2>
+
+      <form method="POST">
+        <div class="input-group">
+          <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            required
+          />
+        </div>
+
+        <button type="submit">Login</button>
+      </form>
+
+      {% if error %}
+      <p class="error">{{ error }}</p>
+      {% endif %}
+
+      <div class="footer">Techno Tapas Admin Panel</div>
+    </div>
+  </body>
+</html>

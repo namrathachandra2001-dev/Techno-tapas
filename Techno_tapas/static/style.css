@@ -1,0 +1,230 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff9800;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.scramble {
+    font-size: 22px;
+    margin: 20px;
+    letter-spacing: 5px;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+.letter-container {
+    margin: 20px;
+}
+
+.letter-box {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 6px;
+    border: 2px solid #ff9800;
+}
+
+.letter-box:focus {
+    outline: none;
+    border-color: #00ffcc;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    text-align: center;
+}
+
+header {
+    position: relative;
+    padding: 20px;
+}
+
+.logo {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    height: 60px;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.par{
+    font-size: 20px;
+    font-style: italic;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+input {
+    padding: 12px;
+    width: 280px;
+    margin: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #ff9800;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 28px;
+    }
+    .logo {
+        height: 40px;
+    }
+}
+
+/* Page Centering */
+
+.page-center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:70vh;
+}
+
+/* Card */
+
+.card{
+    background:white;
+    padding:40px;
+    width:350px;
+    border-radius:12px;
+    box-shadow:0px 8px 20px rgba(0,0,0,0.3);
+    text-align:center;
+}
+
+/* Card Title */
+
+.card h2{
+    margin-bottom:20px;
+    color:#333;
+}
+
+/* Input Fields */
+
+.input-group{
+    margin-bottom:15px;
+}
+
+.card input{
+    width: 95%px;
+    padding:12px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+/* Button */
+
+.card button{
+    width:100%;
+    padding:12px;
+    background:#ff9800;
+    border:none;
+    color:white;
+    font-weight:bold;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.card button:hover{
+    background:#e68900;
+}
+
+/* Error */
+
+.error{
+    color:red;
+    margin-top:10px;
+}
+
+/* Header */
+
+header{
+    position:relative;
+    text-align:center;
+    padding:20px;
+}
+
+.title{
+    font-weight:bold;
+    font-style:italic;
+    font-size:38px;
+}
+
+.logo{
+    position:absolute;
+    right:20px;
+    top:10px;
+    height:60px;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:600px){
+
+    .card{
+        width:90%;
+        padding:25px;
+    }
+
+    .title{
+        font-size:28px;
+    }
+
+    .logo{
+        height:40px;
+    }
+}
+
+.topic{
+    margin-top:10px;
+    margin-bottom:15px;
+    color:#333;
+    font-weight:bold;
+}
+
+.marks{
+    color:red;
+    font-weight:bold;
+    margin:10px 0;
+}

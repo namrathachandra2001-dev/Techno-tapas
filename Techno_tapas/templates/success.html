@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Techno Tapas-Topic Unlocked</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<style>
+    /* Page Background */
+body{
+    margin:0;
+    padding:0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg,#1e3a8a,#2563eb);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Main Container Card */
+.container{
+    background:white;
+    padding:50px 60px;
+    border-radius:14px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    width:420px;
+    animation: fadeIn 0.8s ease;
+}
+
+/* Title */
+.container h1{
+    color:#16a34a;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+/* Subtitle */
+.container h2{
+    color:#1f2937;
+    font-size:22px;
+    margin:10px 0;
+}
+
+/* Topic Highlight */
+.container h2:nth-of-type(2){
+    background:#f1f5ff;
+    padding:12px;
+    border-radius:8px;
+    font-weight:600;
+    color:#2563eb;
+    margin-top:15px;
+}
+
+/* Marks Text */
+.container h3{
+    color:#374151;
+    font-size:18px;
+    margin-top:10px;
+}
+
+/* Success Animation */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+<body>
+    <div class="container">
+        <img src="/static/logo.jpg" style="width:80px;margin-bottom:10px;">
+
+        <h1>🎉 Congratulations!</h1>
+        <br> 
+        <h2>Your topic has been unlocked.</h2>
+        <br>
+        <h2>{{ topic }}</h2>
+        <br>
+        <h3>You have been Awarded with Marks : +5 </h3> <br>
+        <h3>All the best for your Collage Round!</h3>
+    </div>
+</body>
+</html>
+
+
